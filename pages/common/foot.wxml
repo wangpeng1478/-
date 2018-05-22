@@ -1,0 +1,15 @@
+<template name="foot">
+    <view class='p'>©2015-2018 上海德御房地产经纪事务所</view>  
+    <view class='p'>浦东地址：上海市崂山路526号江苏大厦1层</view>    
+    <view class='p'>浦西地址：上海市南京东路800号新一百大厦15C室</view>  
+    <view class='Cphoen' bindtap="clickPhone" hover-class="tapbut">
+     <image src='/image/phone-icon.png' lazy-load="true"></image>
+     悦办越好咨询热线：021-68771866
+    </view>
+    <view class='Customer' hover-class="tapbut">
+     <view class='r'>
+      <image src='/image/Customer.png' lazy-load="true"></image> 
+      <contact-button size="40" session-from="weapp"></contact-button>
+      </view>
+    </view>
+</template> 

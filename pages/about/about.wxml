@@ -1,0 +1,51 @@
+<import src="../../pages/common/foot.wxml" />
+
+<view class='pof'>
+    <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" hover-class="tapbut" data-current="0" bindtap="swichNav">关于我们</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" hover-class="tapbut" data-current="1" bindtap="swichNav">联系我们</view>
+        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" hover-class="tapbut" data-current="2" bindtap="swichNav">常见问题</view>
+    </view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item class="se1">
+        <image class='se1bg' src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/abontbg1.jpg' lazy-load="true"></image>
+        <view class='p'>悦办越好（yuebanyuehao.com）是一家专注于为企业提供办公选址及配套服务的互联网平台，隶属于上海德御房地产经纪事务所。
+        </view>
+        <view class='p'>悦办越好以“为企业提供最有价值的选址服务”为原则，让企业办公选址省心、省力、省时间
+        </view>
+        <view class='p'>悦办越好杜绝任何虚假和无效房源信息，通过线上选房、智能匹配、实地看房、正规签约的标准流程，为企业提供最专业的选址服务。
+        </view>
+        <view class='p'>悦办越好始终站在企业与业主的角度思考和处理问题，以追求企业与业主双赢为准则，客观公正维护我们的职业形象，力求做好完美桥梁。
+        </view>
+    </swiper-item>
+    <swiper-item class="se2">
+        <image class='se1bg' src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/abontbg2.jpg' lazy-load="true"></image>
+        <view class='p1'>电话：021-68771866</view>
+        <view class='p1'>地址(浦东)：上海市崂山路526号江苏大厦1层</view>
+        <view class='p1'>地址(浦西)：南京东路800号新一百大厦15C室</view>
+        <view class='semap'>
+            <image class='semap' src="https://restapi.amap.com/v3/staticmap?key=31e75a14b4666b3a920c6e9ea089f1b5&s=rsx&platform=WXJS&appname=31e75a14b4666b3a920c6e9ea089f1b5&sdkversion=1.2.0&logversion=2.0&location={{togg ? '121.523435,31.22785' : '121.475213,31.235871'}}&zoom=18&size=700*500&scale=1"></image>
+            <view class='mapBG'></view>
+            <view class='mapT'>{{togg ? '浦东办公室' : '浦西办公室'}}</view>
+            <view class='but'>
+                <view hover-class="tapbut" bindtap="butmao1" class="b1 {{togg ? 'abon' : ''}}">浦东办公室</view>
+                <view hover-class="tapbut" bindtap="butmao2" class="b1 {{togg ? '' : 'abon'}}">浦西办公室</view>
+            </view>
+        </view>
+    </swiper-item>
+    <swiper-item class="se3">
+        <image class='se1bg' src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/abontbg3.jpg' lazy-load="true"></image>
+        <view class='wen'>问：悦办越好网站上的房源和照片都是真实的吗？</view>
+        <view class='da'>答：悦办越好承诺，悦办越好网站上的所有房源均由专业顾问团队实勘录入，楼盘和房源照片均由专业摄影师现场拍摄，100%真实可靠！</view>
+        <view class='wen'>问：悦办越好网站上的房源和照片都是真实的吗？</view>
+        <view class='da'>答：悦办越好承诺，悦办越好网站上的所有房源均由专业顾问团队实勘录入，楼盘和房源照片均由专业摄影师现场拍摄，100%真实可靠！</view>
+        <view class='wen'>问：悦办越好网站上的房源和照片都是真实的吗？</view>
+        <view class='da'>答：悦办越好承诺，悦办越好网站上的所有房源均由专业顾问团队实勘录入，楼盘和房源照片均由专业摄影师现场拍摄，100%真实可靠！</view>
+    </swiper-item>
+</swiper>
+<!-- foot -->
+<view class='foot'>
+    <template is="foot" />
+</view>
+<!-- foot -->

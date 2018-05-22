@@ -1,0 +1,95 @@
+<import src="../../pages/common/foot.wxml" />
+
+<view class='dsf'>
+<view class='searchS'>
+    <navigator class='searchSN' url="../../pages/search/search">
+        <icon type="search" size="14"></icon>
+        <view>搜索</view>
+    </navigator>
+</view>
+<view class="section_picker">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <!-- <view>{{multiArray[0][multiIndex[0]]}}</view> -->
+        <!-- <view>{{multiArray[1][multiIndex[1]]}}</view> -->
+        <view hover-class="tapbut">地铁</view>
+    </picker>
+    <picker mode="multiSelector" bindchange="pickerShangq" bindcolumnchange="pickerShangqC" value="{{pickerData}}" range="{{pickerOn}}">
+        <!-- <view>{{pickerOn[0][pickerData[0]]}}</view> -->
+        <!-- <view>{{pickerOn[1][pickerData[1]]}}</view> -->
+        <view hover-class="tapbut">商圈</view>
+    </picker>
+
+    <picker mode="multiSelector" bindchange="Price_c" bindcolumnchange="Price_cc" value="{{PriceData}}" range="{{PriceOn}}">
+        <!-- <view>{{PriceOn[0][PriceData[0]]}}</view> -->
+        <!-- <view>{{PriceOn[1][PriceData[1]]}}</view> -->
+        <view hover-class="tapbut">价格</view>
+    </picker>
+    <picker mode="multiSelector" bindchange="Other_c" bindcolumnchange="Other_cc" value="{{OtherData}}" range="{{OtherOn}}">
+        <!-- <view>{{OtherOn[0][OtherData[0]]}}</view> -->
+        <!-- <view>{{OtherOn[1][OtherData[1]]}}</view> -->
+        <view  hover-class="tapbut">其他</view>
+    </picker>
+</view>
+
+</view>
+
+
+<view class='container-pa15'>
+<view class='scrrr cl' wx:if="{{showhide}}" >
+        <view  class='shiaxuanT' wx:if="{{OtherOnnnnn}}">
+        <view>{{OtherOnnnnn}}</view>
+    </view>
+    <view  class='shiaxuanT' wx:if="{{multiArrayy}}">
+        <view>{{multiArrayy}}</view>
+    </view>
+       <view  class='shiaxuanT' wx:if="{{pickerOnn}}">
+        <view>{{pickerOnn}}</view>
+    </view>
+    <view  class='shiaxuanT' wx:if="{{PriceOnn}}">
+        <view>{{PriceOnn}}</view>
+    </view>
+       <view  class='shiaxuanT' wx:if="{{OtherOnn}}">
+        <view>{{OtherOnn}}</view>
+    </view>
+          <view  class='shiaxuanT' wx:if="{{OtherOnnn}}">
+        <view>{{OtherOnnn}}</view>
+    </view>
+             <view  class='shiaxuanT' wx:if="{{OtherOnnnn}}">
+        <view>{{OtherOnnnn}}</view>
+    </view>
+      <view class='remove'  bindtap="removee" hover-class="tapbut"></view>
+</view>
+ <scroll-view scroll-y = 'true' bindscrolltolower="loadMore" bindscrolltoupper="refesh"> 
+<view class='office-ul'>
+<view wx:if="{{Loading}}" class='Loading'> <view class='i'></view> 加载中...</view>
+<!-- for -->
+   <navigator wx:for="{{msg}}" wx:for-item="itemName" wx:key="" class='office-li cl' url="../../pages/page/page?id={{itemName.id}}" >
+    <image class='img' src='{{itemName.img}}' lazy-load="true"></image>
+    <view class='office-text'>
+       <view class='p1'>{{itemName.name}}</view>
+       <view class='p2'>{{itemName.mian}}㎡</view>
+       <view class='p3'>{{itemName.Area}} - {{itemName.Street}}</view>
+       <view class='p4'>{{itemName.metro}}</view>
+    </view>
+    <view class='text-clur'>{{itemName.metroo}}/m²⋅天</view>
+  </navigator> 
+<!-- for -->
+<view wx:if="{{button}}" class='button'>我是有底线的...</view>
+</view>
+    <view class="null tc" wx:if="{{nullhide}}">
+        <icon type="clear" size="80" color="#76695b"/>
+        <view class="txt1">当前筛选无结果</view>
+        <view class="txt2">您可以尝试筛选其他分类看看</view>
+        <view class="txt2">也可以点击委托找房</view>
+        <navigator hover-class="tapbut" class='weit' url="../../pages/Entrust/Entrust"> 委托找房</navigator>
+    </view>
+    
+  </scroll-view>  
+</view>
+
+
+<!-- foot -->
+<view class='foot'>
+  <template is="foot" />
+</view>
+<!-- foot -->

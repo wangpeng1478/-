@@ -1,0 +1,59 @@
+<import src="../../pages/common/foot.wxml" />
+
+<view class='container'>
+
+    <view class='navImg'>
+        <image src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/yuyue_bg2.jpg' lazy-load="true"></image>
+        <text class='t1'>悦办越好</text>
+        <text class='t2'>体验不同的办公享受 和有趣的人不期而遇！</text>
+    </view>
+    <view class='ebox'>
+        <view class='c1'>免费委托找房</view>
+
+        <view class='yuebg'>
+        <image src='http://www.yuebanyuehao.com/servicing_shop/extend/images/icon.jpg'></image>
+        
+        </view>
+        <view class='form'>
+            <form bindsubmit="formSubmit">
+                <textarea bindinput="vlu2" name="xuqiu" placeholder="你的需求， 如：外滩SOHO，200平米写字楼，简装带家私，租金8元/㎡/天左右，附近有地铁" />
+                  <input type="number" name="phone" placeholder="请输入手机号码" maxlength="11" bindinput="avalue" focus="{{yuyue}}" />
+                <button hover-class="tapbut" formType="submit">立即预约</button>
+            </form>
+        </view>
+
+        <view class='box'>
+            <view class='t'>
+               为什么选择悦办越好？
+            </view>
+            <view class='p'>
+                   悦办越好（yuebanyuehao.com）是一家专注于为企业提供办公选址及配套服务的互联网平台，隶属于上海德御房地产经纪事务所。
+            </view>
+            <view class='p'>
+                   悦办越好以“为企业提供最有价值的选址服务”为原则，让企业办公选址省心、省力、省时间
+            </view>
+            <view class='p'>
+                  悦办越好杜绝任何虚假和无效房源信息，通过线上选房、智能匹配、实地看房、正规签约的标准流程，为企业提供最专业的选址服务。
+            </view>
+             <view class='p'>
+                  悦办越好始终站在企业与业主的角度思考和处理问题，以追求企业与业主双赢为准则，客观公正维护我们的职业形象，力求做好完美桥梁。
+            </view>
+             
+             <view class='ul'>
+              <view class='li'><text>真</text>100%真实房源</view>
+              <view class='li'><text>快</text>一小时快速找房</view>
+              <view class='li'><text>专</text>专业顾问全面选址分析</view>
+              <view class='li'><text>免</text>全程免佣金，一站式服务</view>
+             </view>
+
+
+        </view>
+    </view>
+
+    <!-- foot -->
+    <view class='foot'>
+        <template is="foot" />
+    </view>
+    <!-- foot -->
+
+</view>

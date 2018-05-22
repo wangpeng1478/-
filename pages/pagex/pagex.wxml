@@ -1,0 +1,173 @@
+
+
+
+
+<import src="../../pages/common/foot.wxml" />
+<!-- banner -->
+<swiper class="swiper-box {{yuyue? 'mohu' : ''}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key>
+        <swiper-item>
+            <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" lazy-load="true"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<!-- banner -->
+<view class="containerr {{yuyue? 'mohu' : ''}}">
+    <!-- box1 -->
+    <view class='page_box'>
+        <view class='page_box_h3'>{{OfficeBuildingg}}</view>
+        <view class='br'></view>
+        <view class='page_box_ul cl'>
+            <view class='l'>
+                <view class='d'>{{area}} - {{TradingArea}} - {{address}}</view>
+                <view class='t'>{{metro}}</view>
+            </view>
+            <view class='r'>
+                <button hover-class="tapbut" open-type="share">分享</button>
+            </view>
+        </view>
+        <view class='br'></view>
+        <view class='page_for'>
+            <view class='t'>
+                <view class='t3'>
+                    <text>{{yue}}</text>元/月</view>
+                <view class='t4'>{{tian}}元/m²⋅天</view>
+            </view>
+            <view class='t bordtow'>
+                <view class='t3'>
+                    <text>{{jmian}}</text>m²</view>
+                <view class='t4'>使用率:{{shiyl}}%</view>
+            </view>
+            <view class='t bordtow'>
+                <view class='t3'>
+                    <text>{{zhuanx}}</text>
+                </view>
+                <view class='t4'>{{louceng}}</view>
+            </view>
+        </view>
+        <view class='br'></view>
+    </view>
+    <!-- box1 -->
+    <view class='page_box'>
+        <view class='mingpian cl'>
+            <image src='{{imgg}}' lazy-load="true"></image>
+            <view class='t cl'>
+                <view class='q1'>
+                    <text>{{namee}}</text>{{zhiw}}</view>
+                <view class='q2'>{{enamee}}</view>
+            </view>
+            <button hover-class="tapbut" bindtap="clickPhonee">{{mobileee}}</button>
+        </view>
+    </view>
+    <!-- box3 -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}写字楼简介</view>
+        <view class='br'></view>
+        <view class='pagexbox cl'>
+            <view class='li lif'>免租日期：{{mianzuq}}</view>
+            <view class='li lif'>最短租期：{{ziomin}}</view>
+            <view class='li lif'>是否可注册：{{shidasd}}</view>
+            <view class='li lif'>最早可租：{{zuizaozu}}</view>
+            <view class='li'>装修情况：{{zhuanxiu}}</view>
+            <view class='li'>看房时间：{{loofang}}</view>
+            <view class='li'>楼层信息：{{louceng}}</view>
+            <view class='li'>价格优势：{{jiahesss}}</view>
+            <view class='li'>面积信息：{{mainyin}}</view>
+        </view>
+        <view class='br'></view>
+        <view class='textJi'></view>
+        <view wx:if="{{!isFold}}" class='extend'>
+            {{jianjie}}
+            <view class='clichide' bindtap="flodFn">
+                <view class='textloog'>︾</view>
+            </view>
+        </view>
+        <view wx:else class='extends'>
+            {{jianjie}}
+        </view>
+    </view>
+    <!-- box3 -->
+    <!-- img -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}图片</view>
+        <view class='br'></view>
+        <scroll-view class='pageimg' scroll-x="true">
+            <block wx:for="{{imgUrls}}" wx:key>
+                <image class='pageimgbox' src="{{item}}" data-src="{{item}}" bindtap="previewImage" lazy-load="true"></image>
+            </block>
+        </scroll-view>
+    </view>
+    <!-- img -->
+    <!-- box4 -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}周边</view>
+        <view class='br'></view>
+        <view class='map'>
+            <!-- <image src=" http://restapi.amap.com/v3/staticmap?location={{ASmap}}&zoom=16&size=672*400&key=28922174716d544ae7f6563f6ca15269"></image> -->
+            <image src="https://restapi.amap.com/v3/staticmap?key=31e75a14b4666b3a920c6e9ea089f1b5&s=rsx&platform=WXJS&appname=31e75a14b4666b3a920c6e9ea089f1b5&sdkversion=1.2.0&logversion=2.0&location={{ASmap}}&zoom=16&size=700*500&scale=1"></image>
+            <view class='mapBG'></view>
+            <view class='mapT'>{{OfficeBuilding}}</view>
+        </view>
+        <view class='zhoub'>
+            <view class='m1'>地铁站: {{subway}}</view>
+            <view class='m2'>公交站: {{transit}}</view>
+            <view class='m3'>酒店: {{Hotel}}</view>
+            <view class='m4'>银行: {{Bank}}</view>
+        </view>
+    </view>
+    <!-- box4 -->
+    <!-- box5 -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}周边推荐
+            <navigator url="../../pages/soso/soso">更多></navigator>
+        </view>
+        <view class='br'></view>
+        <view class='Recommendation'>
+            <!-- for -->
+            <navigator wx:for="{{Recommend}}" wx:for-item="itemName" wx:key="" class='office-li cl' url="{{itemName.url}}">
+                <image class='img' src='{{itemName.img}}' lazy-load="true"></image>
+                <view class='office-text'>
+                    <view class='p1'>{{itemName.name}}</view>
+                    <view class='p2'>{{itemName.mian}}㎡ - {{itemName.metroo}}/m²⋅天</view>
+                    <view class='p3'>{{itemName.Area}} - {{itemName.Street}}</view>
+                    <view class='p4'>{{itemName.metro}}</view>
+                </view>
+            </navigator>
+            <!-- for -->
+        </view>
+    </view>
+    <!-- box5 -->
+</view>
+
+
+<!-- 底部预约 -->
+<view class="footbut {{yuyue? 'mohu' : ''}}">
+    <view hover-class="tapbut" class='y' bindtap="yuyue">立即预约</view>
+    <view hover-class="tapbut" class='z' bindtap="clickPhone">免费咨询</view>
+</view>
+<!-- 底部预约 -->
+<!-- foot -->
+<view class="foot {{yuyue? 'mohu' : ''}}">
+    <template is="foot" />
+</view>
+<!-- foot -->
+
+
+
+<!-- 立即预约 -->
+<view class="yuphone {{yuyue? 'yuhide' : 'yushow'}}">
+    <view class='n cl'>
+        <text>预约看房</text>
+        <button bindtap="hideyuyue" hover-class="tapbut">
+            <icon type="clear" size="18"></icon>
+        </button>
+    </view>
+    <view class='w1'>{{OfficeBuilding}}</view>
+    <view class='w2'>留下联系方式，顾问带您实地看房</view>
+    <form bindsubmit="formSubmit">
+        <input type="number" name="phone" placeholder="请输入手机号码" maxlength="11" focus="{{yuyue}}" bindinput="avalue" value="{{yuv}}" />
+         <input value="{{id}}" name="id" style='display: none' />
+        <button hover-class="tapbut" formType="submit">立即预约</button>
+    </form>
+</view>
+<!-- 立即预约 -->

@@ -1,0 +1,20 @@
+{
+    "pages":[
+        "pages/index/index",
+        "pages/soso/soso",
+        "pages/adviser/adviser",
+        "pages/about/about",
+        "pages/Entrust/Entrust",
+        "pages/pagex/pagex",
+        "pages/page/page",   
+        "pages/search/search"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#00b86b",
+      "navigationBarTextStyle": "white",
+      "navigationBarTitleText": "悦办越好",
+      "backgroundColor": "#eeeeee",
+      "backgroundTextStyle": "light"
+    }
+}
+

@@ -1,0 +1,100 @@
+<import src="../../pages/common/head.wxml" />
+<import src="../../pages/common/foot.wxml" />
+
+<template is="head" />
+
+ <!-- head-img -->
+<view class='positofrow'>
+ <view class='positof'>
+    <view class='head-img' url="../../pages/search/index">
+        <image class="ban-bg" src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/banner1.jpg'>
+            <navigator class='Tsearch' url="../../pages/search/search">
+                <view class='f-l'>输入您想找的区域/商圈或者写字楼名称</view>
+                <view class='f-r'>
+                    <icon class="icon-small" size="14" type="search"></icon>
+                </view>
+                <view class='f-r-text'></view>
+            </navigator>
+        </image>
+        <!-- <view class="head-bottomn-bg"></view> -->
+    </view>
+    </view>
+    </view>
+    <!-- head-img -->
+<view class='posibb'>
+<view class='container'>
+    <view class='index-se-nav'>
+
+        <navigator class="nav-a" url="../../pages/soso/soso">
+            <view class='text-l-r'>
+                <view class='b'>写字楼出租</view>
+                <view class='p'>Office Rental</view>
+            </view>
+            <view class='nav-icon'>
+                <image src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/nac-icon1.png' lazy-load="true"></image>
+            </view>
+        </navigator>
+
+        <navigator class="nav-a" url="../../pages/Entrust/Entrust">
+            <view class='text-l-r'>
+                <view class='b'>委托找房</view>
+                <view class='p'>Entrust House</view>
+            </view>
+            <view class='nav-icon'>
+                <image src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/nac-icon2.png' lazy-load="true"></image>
+            </view>
+        </navigator>
+        <navigator class="nav-a" url="../../pages/adviser/adviser">
+            <view class='text-l-r'>
+                <view class='b'>投放房源</view>
+                <view class='p'>Office Delivery</view>
+            </view>
+            <view class='nav-icon'>
+                <image src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/nac-icon3.png' lazy-load="true"></image>
+            </view>
+        </navigator>
+        <navigator class="nav-a" url="../../pages/about/about?index=1">
+            <view class='text-l-r'>
+                <view class='b'>关于我们</view>
+                <view class='p'>About Us</view>
+            </view>
+            <view class='nav-icon'>
+                <image src='http://www.yuebanyuehao.com/servicing_shop/extend/images/wx/nac-icon4.png' lazy-load="true"></image>
+            </view>
+        </navigator>
+    </view>
+    <!-- head-img -->
+    <view class='container-pa15'>
+        <!-- nav-left-border -->
+        <view class='nav-left-border cl'>
+            <view class='p-l'>写字楼推荐</view>
+            <navigator url="../../pages/soso/soso" class='p-r'>更多></navigator>
+        </view>
+        <!-- nav-left-border -->
+        <view class='office-ul'>
+            <view wx:if="{{Loading}}" class='Loading'>
+                <view class='i'></view> 加载中...</view>
+            <!-- for -->
+            <navigator wx:for="{{msg}}" wx:for-item="itemName" wx:key="" class='office-li cl' url="../../pages/page/page?id={{itemName.id}}">
+                <image class='img' src='{{itemName.img}}' lazy-load="true"></image>
+                <view class='office-text'>
+                    <view class='p1'>{{itemName.name}}</view>
+                    <view class='p2'>{{itemName.mian}}㎡</view>
+                    <view class='p3'>{{itemName.Area}} - {{itemName.Street}}</view>
+                    <view class='p4'>{{itemName.metro}}</view>
+                </view>
+                <view class='text-clur'>{{itemName.metroo}}/m²⋅天</view>
+            </navigator>
+            <!-- for -->
+        </view>
+        <navigator wx:if="{{!Loading}}" url="../../pages/soso/soso" class='genS' hover-class="tapbut">查看更多写字楼</navigator>
+    </view>
+
+</view>
+</view>
+<!-- foot -->
+<view class='foot'>
+    <template is="foot" />
+</view>
+<!-- foot -->
+<!-- <web-view src="http://127.0.0.1:8080/Phone/">111111</web-view> -->

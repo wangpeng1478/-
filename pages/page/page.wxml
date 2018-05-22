@@ -1,0 +1,194 @@
+<import  src="../../pages/common/foot.wxml" />
+<!-- banner -->
+<swiper class="swiper-box {{yuyue? 'mohu' : ''}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key>
+        <swiper-item>
+            <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" lazy-load="true"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<!-- banner -->
+<view class="containerr {{yuyue? 'mohu' : ''}}">
+    <!-- box1 -->
+    <view class='page_box'>
+        <view class='page_box_h2'>{{OfficeBuilding}}</view>
+        <view class='br'></view>
+        <view class='page_box_ul cl'>
+            <view class='l'>
+                <view class='d'>{{area}} - {{TradingArea}} - {{address}}</view>
+                <view class='t'>{{metro}}</view>
+            </view>
+            <view class='r'>
+                <button hover-class="tapbut" open-type="share">分享</button>
+            </view>
+        </view>
+        <view class='br'></view>
+        <view class='page_for'>
+            <view class='t'>
+                <view class='t1'>{{Section1}}元/m²⋅天</view>
+                <view class='t2'>价格</view>
+            </view>
+            <view class='t bordtow'>
+                <view class='t1'>{{Section2}}㎡</view>
+                <view class='t2'>面积</view>
+            </view>
+        </view>
+        <view class='br'></view>
+    </view>
+    <!-- box1 -->
+    <!-- box2 -->
+    <view class='page_box'>
+        <view class='page_box_time'>写字楼待租户型({{Section3}}套)</view>
+        <view class='br'></view>
+        <!-- for -->
+        <view class="pageUl {{office? 'paheight1' : ''}}">
+            <!-- 当前页面打开 -->
+            <navigator class='pageLI cl' wx:for="{{OfficeList}}" wx:for-item="item" wx:key="" url="{{item.url}}" open-type="redirect">
+                <image class='img' src='{{item.img}}' lazy-load="true"></image>
+                <view class='pageT'>
+
+                    <view class='p1'>
+                        <text>{{item.mianji}}</text>m²</view>
+                    <view class='p2'>
+                        <text>{{item.zujin}}</text>元/m²⋅天</view>
+                    <view class='p3'>
+                        <text>{{item.yue}}</text> 元/月</view>
+                </view>
+            </navigator>
+        </view>
+        <!-- for -->
+        <button wx:if="{{office}}" bindtap="office"> 查看更多</button>
+    </view>
+    <!-- box2 -->
+    <!-- box3 -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}写字楼简介</view>
+        <view class='br'></view>
+        <view class='jianShaT cl'>
+            <text class='t1'>写字楼等级</text>
+            <text class='t2'>{{dengji}}写字楼</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>总楼层</text>
+            <text class='t2'>{{cengshu}}层</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>建筑面积</text>
+            <text class='t2'>{{mianji}}m²</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>标准层高</text>
+            <text class='t2'>{{cenggao}}m</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>客梯数</text>
+            <text class='t2'>{{dianti}}</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>开发商</text>
+            <text class='t2'>{{kaifashang}}</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>物业公司</text>
+            <text class='t2'>{{wuye}}</text>
+        </view>
+        <view class='jianShaT cl'>
+            <text class='t1'>入住企业</text>
+            <text class='t2'>{{qiye}}</text>
+        </view>
+        <view class='textJi'></view>
+        <view wx:if="{{!isFold}}" class='extend'>
+            {{jianjie}}
+            <view class='clichide' bindtap="flodFn">
+                <view class='textloog'>︾</view>
+            </view>
+        </view>
+        <view wx:else class='extends'>
+            {{jianjie}}
+        </view>
+    </view>
+    <!-- box3 -->
+    <!-- img -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}图片</view>
+        <view class='br'></view>
+           <scroll-view class='pageimg' scroll-x="true">
+            <block wx:for="{{imgUrls}}" wx:key>
+            <image class='pageimgbox' src="{{item}}" data-src="{{item}}" bindtap="previewImage" lazy-load="true"></image>
+          </block>
+           </scroll-view>
+    </view>
+    <!-- img -->
+    <!-- box4 -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}周边</view>
+        <view class='br'></view>
+        <view class='map'>
+            <!-- <image src=" http://restapi.amap.com/v3/staticmap?location={{ASmap}}&zoom=16&size=672*400&key=28922174716d544ae7f6563f6ca15269"></image> -->
+             <image src="https://restapi.amap.com/v3/staticmap?key=31e75a14b4666b3a920c6e9ea089f1b5&s=rsx&platform=WXJS&appname=31e75a14b4666b3a920c6e9ea089f1b5&sdkversion=1.2.0&logversion=2.0&location={{ASmap}}&zoom=16&size=672*400&scale=1"></image>
+            <view class='mapBG'></view>
+            <view class='mapT'>{{OfficeBuilding}}</view>
+        </view>
+        <view class='zhoub'>
+          <view class='m1'>地铁站: {{subway}}</view>
+          <view class='m2'>公交站: {{transit}}</view>
+          <view class='m3'>酒店: {{Hotel}}</view>
+          <view class='m4'>银行: {{Bank}}</view>
+        </view>
+    </view>
+    <!-- box4 -->
+    <!-- box5 -->
+    <view class='page_box'>
+        <view class='page_box_time'>{{OfficeBuilding}}周边推荐
+            <navigator url="../../pages/soso/soso">更多></navigator>
+        </view>
+        <view class='br'></view>
+        <view class='Recommendation'>
+            <!-- for -->
+            <navigator wx:for="{{Recommend}}" wx:for-item="itemName" wx:key="" class='office-li cl' url="{{itemName.url}}">
+                <image class='img' src='{{itemName.img}}' lazy-load="true"></image>
+                <view class='office-text'>
+                    <view class='p1'>{{itemName.name}}</view>
+                    <view class='p2'>{{itemName.mian}}㎡ - {{itemName.metroo}}/m²⋅天</view>
+                    <view class='p3'>{{itemName.Area}} - {{itemName.Street}}</view>
+                    <view class='p4'>{{itemName.metro}}</view>
+                </view>
+            </navigator>
+            <!-- for -->
+        </view>
+    </view>
+    <!-- box5 -->
+</view>
+
+
+<!-- 底部预约 -->
+<view class="footbut {{yuyue? 'mohu' : ''}}">
+    <view hover-class="tapbut" class='y' bindtap="yuyue">立即预约</view>
+    <view hover-class="tapbut" class='z' bindtap="clickPhone">免费咨询</view>
+</view>
+<!-- 底部预约 -->
+<!-- foot -->
+<view class="foot {{yuyue? 'mohu' : ''}}">
+    <template is="foot" />
+</view>
+<!-- foot -->
+
+
+
+<!-- 立即预约 -->
+<view class="yuphone {{yuyue? 'yuhide' : 'yushow'}}">
+    <view class='n cl'>
+        <text>预约看房</text>
+        <button bindtap="hideyuyue" hover-class="tapbut">
+            <icon type="clear" size="18"></icon>
+        </button>
+    </view>
+    <view class='w1'>{{OfficeBuilding}}</view>
+    <view class='w2'>留下联系方式，顾问带您实地看房</view>
+    <form bindsubmit="formSubmit">
+        <input type="number" name="phone" placeholder="请输入手机号码" maxlength="11" focus="{{yuyue}}" bindinput="avalue" value="{{yuv}}" />
+        <input value="{{id}}" name="id" style='display: none' />
+        <button hover-class="tapbut" formType="submit">立即预约</button>
+    </form>
+</view>
+<!-- 立即预约 -->

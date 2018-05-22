@@ -1,0 +1,70 @@
+@import "/wxSearch/wxSearch.wxss";
+
+/* @import '/style/weui.wxss'; */
+
+.weui-search-bar {
+  position: relative;
+  height: 86rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.weui-icon-search {
+  margin-right: 16rpx;
+  font-size: inherit;
+}
+
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 20rpx;
+  top: 14rpx;
+}
+
+.weui-search-bar__text {
+  display: inline-block;
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+
+.weui-search-bar__form {
+  border-radius: 5px;
+  background: #fff;
+  border: 1rpx solid #e6e6ea;
+  box-sizing: border-box;
+  float: left;
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 10rpx;
+}
+
+.weui-search-sous {
+  box-sizing: border-box;
+  float: right;
+  color: #353535;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  height: 100%;
+  line-height: 86rpx;
+  position: absolute;
+  right: 10rpx;
+  color: #c6c6c6;
+}
+
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 28rpx;
+}
